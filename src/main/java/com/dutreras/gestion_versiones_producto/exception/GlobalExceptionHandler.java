@@ -50,4 +50,10 @@ public class GlobalExceptionHandler {
         body.put("message", message);
         return new ResponseEntity<>(body, status);
     }
+    
+    @ExceptionHandler(FechaInvalidaException.class)
+    public ResponseEntity<Object> handleFechaInvalida(FechaInvalidaException ex) {
+        return buildResponse(HttpStatus.BAD_REQUEST, ex.getMessage());
+    }
+
 }

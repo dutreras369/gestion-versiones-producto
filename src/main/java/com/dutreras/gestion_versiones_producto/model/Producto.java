@@ -40,7 +40,7 @@ public class Producto {
     }
 
     public void setNombre(String nombre) {
-        this.nombre = nombre != null ? nombre.trim().toLowerCase() : null;
+        this.nombre = nombre != null ? nombre.trim() : null;
     }
 
     public String getDescripcion() {

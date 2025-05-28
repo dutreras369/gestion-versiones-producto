@@ -25,11 +25,15 @@ public class ProductoServiceImpl implements ProductoService {
 
     @Override
     public ProductoResponse crear(ProductoRequest request) {
-        if (productoRepository.existsByNombreIgnoreCase(request.getNombre())) {
-            throw new DataIntegrityViolationException("El nombre ya existe.");
+        if (productoRepository.findByNombreIgnoreCase(request.getNombre()).isPresent()) {
+            throw new DataIntegrityViolationException("Nombre de producto duplicado");
         }
-        Producto producto = ProductoMapper.toEntity(request);
-        producto = productoRepository.save(producto);
+
+        Producto producto = new Producto();
+        producto.setNombre(request.getNombre());
+        producto.setDescripcion(request.getDescripcion());
+        producto = productoRepository.save(producto); // esto se ejecuta solo si no es duplicado
+
         return ProductoMapper.toResponse(producto);
     }
 

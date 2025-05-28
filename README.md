@@ -73,11 +73,12 @@ target/site/jacoco/index.html
 ```
 
 
-## 📄 Documentación de API
-Cuando la aplicación esté en ejecución, accede a la documentación Swagger:
+## 📄 Documentación de API Y Respaldo
+- Puedes acceder desde la aplicación en ejecución a traves de Swagger
+- Tambien existen los respaldos en la carpeta respaldos
 
 ```
-http://localhost:8080/swagger-ui.html
+http://localhost:8081/swagger-ui.html
 ```
 
 ## 🐳 Docker (opcional)
@@ -96,14 +97,14 @@ Y correrla junto con PostgreSQL usando docker-compose.yml.
 El endpoint /actuator/health está disponible para verificación de estado:
 
 ```
-http://localhost:8080/actuator/health
+http://localhost:8081/actuator/health
 ```
 
 ## 📁 Estructura del proyecto
 
 ```
 com.dutreras.gestion_versiones_producto
-├── config
+├── core
 ├── controller
 ├── dto
 ├── exception
@@ -115,6 +116,8 @@ com.dutreras.gestion_versiones_producto
 │   ├── interfaces
 │   └── impl
 └── util
+└── respaldos
+
 
 ```
 

@@ -2,6 +2,7 @@ package com.dutreras.gestion_versiones_producto.service.impl;
 
 import com.dutreras.gestion_versiones_producto.dto.VersionRequest;
 import com.dutreras.gestion_versiones_producto.dto.VersionResponse;
+import com.dutreras.gestion_versiones_producto.exception.FechaInvalidaException;
 import com.dutreras.gestion_versiones_producto.mapper.VersionMapper;
 import com.dutreras.gestion_versiones_producto.model.Producto;
 import com.dutreras.gestion_versiones_producto.model.Version;
@@ -34,7 +35,7 @@ public class VersionServiceImpl implements VersionService {
 
         // ✅ Validación: fecha de lanzamiento no puede ser anterior a hoy
         if (request.getFechaLanzamiento().isBefore(LocalDate.now())) {
-            throw new IllegalArgumentException("La fecha de lanzamiento no puede ser anterior a hoy");
+            throw new FechaInvalidaException("La fecha de lanzamiento no puede ser anterior a hoy");
         }
 
         Version version = new Version();
