@@ -2,7 +2,7 @@ spring:
   datasource:
     url: jdbc:postgresql://localhost:5432/productos_db
     username: postgres
-    password: ${DB_PASSWORD:changeme}
+    password: Ia369963
     driver-class-name: org.postgresql.Driver
 
   jpa:
@@ -24,7 +24,7 @@ spring:
       INDENT_OUTPUT: true
 
 server:
-  port: 8080
+  port: 8081
 
 springdoc:
   api-docs:
@@ -37,3 +37,7 @@ management:
     web:
       exposure:
         include: "*"
+
+logging:
+  level:
+    org.springframework.security: DEBUG

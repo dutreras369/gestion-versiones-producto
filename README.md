@@ -28,35 +28,6 @@ Microservicio desarrollado en Java 17 + Spring Boot 3 para gestionar productos y
 
 ---
 
-## 🔐 Configuración del entorno
-
-### 1. Variables de entorno
-
-Para mantener la configuración sensible fuera del código, crea un archivo `.env` en la raíz del proyecto:
-
-
-
-```
-DB_PASSWORD=tu_contraseña_de_postgres
-
-```
-
-
-> Este archivo está en `.gitignore` y no debe subirse al repositorio.
-
-### 2. Configuración en Spring Tool Suite (STS)
-
-Si corres el proyecto desde STS:
-
-1. Haz clic derecho sobre el proyecto → `Run As` → `Run Configurations`
-2. Selecciona tu aplicación en `Java Application`
-3. Ve a la pestaña **Environment**
-4. Agrega una variable:
-   - **Name**: `DB_PASSWORD`
-   - **Value**: `tu_contraseña_de_postgres`
-
----
-
 ## ⚙️ Configuración de base de datos
 
 El microservicio se conecta a una base PostgreSQL local usando:

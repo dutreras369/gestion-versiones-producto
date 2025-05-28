@@ -1,5 +1,7 @@
 package com.dutreras.gestion_versiones_producto.model;
 
-public class EstadoVersion {
-
+public enum EstadoVersion {
+    ALFA,
+    BETA,
+    RELEASE
 }
