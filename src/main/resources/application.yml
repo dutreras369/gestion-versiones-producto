@@ -1,8 +1,8 @@
 spring:
   datasource:
-    url: jdbc:postgresql://localhost:5432/productos_db
-    username: postgres
-    password: Ia369963
+    url: ${SPRING_DATASOURCE_URL:jdbc:postgresql://localhost:5432/productos_db}
+    username: ${SPRING_DATASOURCE_USERNAME:postgres}
+    password: ${SPRING_DATASOURCE_PASSWORD:Ia369963}
     driver-class-name: org.postgresql.Driver
 
   jpa:
@@ -13,18 +13,8 @@ spring:
       hibernate:
         format_sql: true
 
-  devtools:
-    restart:
-      enabled: true
-    livereload:
-      enabled: true
-
-  jackson:
-    serialization:
-      INDENT_OUTPUT: true
-
 server:
-  port: 8081
+  port: ${SERVER_PORT:8081}
 
 springdoc:
   api-docs:
@@ -37,7 +27,3 @@ management:
     web:
       exposure:
         include: "*"
-
-logging:
-  level:
-    org.springframework.security: DEBUG
