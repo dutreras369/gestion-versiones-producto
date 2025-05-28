@@ -57,7 +57,15 @@ DB_PASSWORD=tu_contraseña_de_postgres mvn spring-boot:run
 
 ```
 
+##  Usuario Generico
 
+```
+{
+  "username": "admin",
+  "password": "admin123"
+}
+
+```
 ## 🧪 Pruebas
 Para ejecutar las pruebas unitarias e integración:
 
