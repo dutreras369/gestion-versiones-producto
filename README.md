@@ -112,7 +112,7 @@ http://localhost:8081/actuator/health
 
 ```
 com.dutreras.gestion_versiones_producto
-├── core
+├── Config
 ├── controller
 ├── dto
 ├── exception
